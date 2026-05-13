@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IBM Success Stories - Global & Local Impact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lato:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    /* Base Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #030f26;
+      /* Deep Intensive Navy */
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      font-family: 'Lato', sans-serif;
+      color: #f1f5f9;
+    }
+
+    /* Slide Container */
+    .slide-container {
+      width: 1400px;
+      /* Slightly wider to accommodate dense content */
+      height: 787px;
+      /* 16:9 Aspect Ratio */
+      background-color: #030f26;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      padding: 40px 50px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Background Design */
+    .bg-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: 40px 40px;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      z-index: 0;
+    }
+
+    .bg-glow-1 {
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(15, 98, 254, 0.12) 0%, rgba(3, 15, 38, 0) 70%);
+      top: -200px;
+      right: -100px;
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .bg-glow-2 {
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(0, 230, 118, 0.06) 0%, rgba(3, 15, 38, 0) 70%);
+      bottom: -300px;
+      left: -200px;
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .slide-container>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Typography */
+    .slide-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 5px;
+      letter-spacing: 0.5px;
+    }
+
+    .slide-subtitle {
+      font-size: 18px;
+      color: #94a3b8;
+      margin-bottom: 25px;
+      font-weight: 400;
+    }
+
+    .highlight {
+      color: #78a9ff;
+    }
+
+    /* Content Layout */
+    .content-area {
+      display: flex;
+      gap: 25px;
+      flex-grow: 1;
+      width: 100%;
+      align-items: stretch;
+    }
+
+    /* Individual Case Study Tiles */
+    .tile {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      border-radius: 12px;
+      padding: 25px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      backdrop-filter: blur(10px);
+      border-top: 5px solid #0f62fe;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Tile Theming Colors */
+    .tile.global {
+      border-top-color: #78a9ff;
+    }
+
+    .tile.local {
+      border-top-color: #00e676;
+    }
+
+    .tile.competitor {
+      border-top-color: #d4bbff;
+    }
+
+    /* Tile Headers */
+    .tile-header {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .tile-badge {
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .tile.global .tile-badge {
+      color: #78a9ff;
+    }
+
+    .tile.local .tile-badge {
+      color: #00e676;
+    }
+
+    .tile.competitor .tile-badge {
+      color: #d4bbff;
+    }
+
+    .client-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .client-name i {
+      font-size: 20px;
+      opacity: 0.8;
+    }
+
+    /* Dimension Blocks */
+    .dimension {
+      margin-bottom: 18px;
+    }
+
+    .dimension-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #94a3b8;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dimension-content {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #e2e8f0;
+    }
+
+    .dimension-content strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    /* Features Tags */
+    .features-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+      /* Pushes features to the bottom */
+      padding-top: 15px;
+    }
+
+    .feature-tag {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #cbd5e1;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .tile.global .feature-tag {
+      border-color: rgba(120, 169, 255, 0.3);
+      color: #a6c8ff;
+    }
+
+    .tile.local .feature-tag {
+      border-color: rgba(0, 230, 118, 0.3);
+      color: #69f0ae;
+    }
+
+    .tile.competitor .feature-tag {
+      border-color: rgba(212, 187, 255, 0.3);
+      color: #e8daff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="slide-container" id="slide1">
+
+    <!-- Background Elements -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+
+    <!-- Header Section -->
+    <h2 class="slide-title">Eminence in Action: IBM Success Stories</h2>
+    <p class="slide-subtitle">Driving enterprise AI, digital platforms, and operating model transformations at <span
+        class="highlight">Global</span> and <span class="highlight">Local</span> scale.</p>
+
+    <div class="content-area">
+
+      <!-- Tile 1: Global Example (PMI) -->
+      <div class="tile global">
+        <div class="tile-header">
+          <span class="tile-badge">Global Example</span>
+          <div class="client-name"><i class="fa-solid fa-globe"></i> PMI (Philip Morris)</div>
+        </div>
+
+        <div class="dimension">
+          <div class="dimension-title"><i class="fa-solid fa-lightbulb"></i> Innovation Highlight</div>
+          <div class="dimension-content">
+            Deployed <strong>4 custom AI assistants</strong> (Architect, PM, Developer, Tester) built with specific PMI
+            context to ensure standardized, compliant, and highly relevant IBM Consulting Advantage (ICA) usage.
+          </div>
+        </div>
+
+        <div class="dimension">
+          <div class="dimension-title"><i class="fa-solid fa-chart-line"></i> IBM Impact</div>
+          <div class="dimension-content">
+            Rigorous 2-month education campaign utilizing a <strong>Train-the-Trainer (3T) model</strong>. Onboarded
+            ~900 trained professionals and achieved <strong>10%–20% efficiency gains</strong> across 350 unique users in
+            the first 3 months.
+          </div>
+        </div>
+
+        <div class="dimension">
+          <div class="dimension-title"><i class="fa-solid fa-key"></i> Key Learnings</div>
+          <div class="dimension-content">
+            Customer-specific context is critical for AI adoption. Prompt refinement and correct LLM selection greatly
+            improve effectiveness while mitigating risks associated with enterprise data security.
+          </div>
+        </div>
+
+        <div class="features-container">
+          <span class="feature-tag">Custom Personas</span>
+          <span class="feature-tag">Agentic SDLC</span>
+          <span class="feature-tag">ICA Adoption</span>
+          <span class="feature-tag">Train-the-Trainer</span>
+        </div>
+      </div>
+
+      <!-- Tile 2: Local Example (Cathay) -->
+      <div class="tile local">
+        <div class="tile-header">
+          <span class="tile-badge">Local Example</span>
+          <div class="client-name"><i class="fa-solid fa-location-dot"></i> Cathay Pacific</div>
+        </div>
+
+        <div class="dimension">
+          <div class="dimension-title"><i class="fa-solid fa-lightbulb"></i> Innovation Highlight</div>
+          <div class="dimension-content">
+            Engineered a comprehensive <strong>Digital Platform & CX strategy</strong> integrating offline-to-online
+            touchpoints, leveraging contextual 3rd party data to deliver highly personalized passenger interactions.
+          </div>
+        </div>
+
+        <div class="dimension">
+          <div class="dimension-title"><i class="fa-solid fa-chart-line"></i> IBM Impact</div>
+          <div class="dimension-content">
+            Accelerated digital engagement by unifying disparate customer channels. Delivered a seamless
+            <strong>Mobile-First Customer Experience</strong> that natively engages users within regional media
+            ecosystems.
+          </div>
+        </div>
+
+        <div class="dimension">
+          <div class="dimension-title"><i class="fa-solid fa-key"></i> Key Learnings</div>
+          <div class="dimension-content">
+            Omnichannel consistency requires deeply integrated data products. Merging internal enterprise data with
+            external social/media platforms is the bedrock of modern travel retail transformation.
+          </div>
+        </div>
+
+        <div class="features-container">
+          <span class="feature-tag">Mobile First CX</span>
+          <span class="feature-tag">InVenue CX</span>
+          <span class="feature-tag">WeChat & China Media</span>
+          <span class="feature-tag">O2O Commerce</span>
+          <span class="feature-tag">3rd Party Data</span>
+        </div>
+      </div>
+
+      <!-- Tile 3: Local Competitor (AXA) -->
+      <div class="tile competitor">
+        <div class="tile-header">
+          <span class="tile-badge">Local Competitor</span>
+          <div class="client-name"><i class="fa-solid fa-building-shield"></i> AXA Hong Kong</div>
+        </div>
+
+        <div class="dimension">
+          <div class="dimension-title"><i class="fa-solid fa-lightbulb"></i> Innovation Highlight</div>
+          <div class="dimension-content">
+            Introduced a <strong>RAG-Powered Knowledge Management System (KMS)</strong> and an Agentic AI vision,
+            evolving Life Claims operations from scattered files to a centralized enterprise "brain."
+          </div>
+        </div>
+
+        <div class="dimension">
+          <div class="dimension-title"><i class="fa-solid fa-chart-line"></i> IBM Impact</div>
+          <div class="dimension-content">
+            Delivered the first end-to-end Life Claims process documentation across 6 claim types. Provided a concrete
+            <strong>3-year transformation roadmap (2026–2028)</strong> spanning Process, Data, Knowledge, and
+            Automation.
+          </div>
+        </div>
+
+        <div class="dimension">
+          <div class="dimension-title"><i class="fa-solid fa-key"></i> Key Learnings</div>
+          <div class="dimension-content">
+            Infrastructure-first is risky without knowledge governance. A use-case-driven approach wins over bottom-up
+            builds. GenAI requires rule-based engines for financial accuracy; it is not a calculator.
+          </div>
+        </div>
+
+        <div class="features-container">
+          <span class="feature-tag">RAG Maturity Staging</span>
+          <span class="feature-tag">KMS TOM Design</span>
+          <span class="feature-tag">Process Discovery</span>
+          <span class="feature-tag">Human-in-the-Loop</span>
+          <span class="feature-tag">AI Use Case Mapping</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
